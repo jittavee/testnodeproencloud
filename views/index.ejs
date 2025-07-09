@@ -1,47 +1,49 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= title %></title>
-  <link rel="stylesheet" href="/style.css">
-</head>
-<body>
-  <div class="container">
-    <h1><%= title %></h1>
-    
-    <div class="server-card">
-      <h2>Server Information</h2>
-      <p><strong>Name:</strong> <%= serverInfo.name %></p>
-      <p><strong>Status:</strong> <span class="status"><%= serverInfo.status %></span></p>
-      <p><strong>Current Time:</strong> <%= serverInfo.time %></p>
-    </div>
+<%- include('partials/header', { title: 'Home' }) %>
 
-    <div class="links">
-      <a href="/health" class="btn">Health Check</a>
+  <section class="hero">
+    <div class="container">
+      <h1>Welcome to Our Modern Website</h1>
+      <p>Discover amazing features and services designed to help you succeed in the digital world.</p>
+      <div class="hero-buttons">
+        <a href="/about" class="btn">Learn More</a>
+        <a href="/contact" class="btn btn-outline">Contact Us</a>
+      </div>
     </div>
-  </div>
-</body>
-</html> -->
+  </section>
 
-
-<%- include('partials/header', { title: 'Welcome' }) %>
-
-  <h1>Welcome to Our Website</h1>
-  <p>This is a simple web application for testing Proen.cloud deployment.</p>
-  
-  <div class="features">
-    <div class="feature-card">
-      <h2>About Us</h2>
-      <p>Learn more about our company and mission.</p>
-      <a href="/about" class="btn">Read More</a>
+  <section class="features">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Features</h2>
+        <p>Explore what makes our service unique and powerful for your needs</p>
+      </div>
+      
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <h3>Fast Performance</h3>
+          <p>Our platform is optimized for speed and efficiency, ensuring smooth user experiences.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Secure Platform</h3>
+          <p>We prioritize your security with advanced encryption and protection measures.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-headset"></i>
+          </div>
+          <h3>24/7 Support</h3>
+          <p>Our dedicated support team is always ready to assist you with any questions.</p>
+        </div>
+      </div>
     </div>
-    
-    <div class="feature-card">
-      <h2>Contact</h2>
-      <p>Get in touch with our team.</p>
-      <a href="/contact" class="btn">Contact Us</a>
-    </div>
-  </div>
+  </section>
 
 <%- include('partials/footer') %>

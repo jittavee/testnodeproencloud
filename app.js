@@ -1,13 +1,14 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
-
+const path = require('path');
 // ตั้งค่า EJS เป็น template engine
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 
 // ตั้งค่า static files
-app.use(express.static('public'));
+// app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Route หลัก
 app.get('/', (req, res) => {
@@ -22,6 +23,7 @@ app.get('/', (req, res) => {
 });
 
 // เพิ่ม routes ใหม่
+// เพิ่ม route สำหรับหน้า about และ contact
 app.get('/about', (req, res) => {
   res.render('about', {
     title: 'About Us'
@@ -32,6 +34,12 @@ app.get('/contact', (req, res) => {
   res.render('contact', {
     title: 'Contact Us'
   });
+});
+
+app.post('/contact', (req, res) => {
+  // ในที่นี้แค่แสดงผลลัพธ์ ควรเพิ่มการบันทึกข้อมูลจริงใน production
+  console.log('Contact form submitted:', req.body);
+  res.redirect('/contact?success=true');
 });
 
 const bodyParser = require('body-parser');
