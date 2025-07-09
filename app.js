@@ -21,6 +21,30 @@ app.get('/', (req, res) => {
   });
 });
 
+// เพิ่ม routes ใหม่
+app.get('/about', (req, res) => {
+  res.render('about', {
+    title: 'About Us'
+  });
+});
+
+app.get('/contact', (req, res) => {
+  res.render('contact', {
+    title: 'Contact Us'
+  });
+});
+
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// สำหรับรับข้อมูลจากฟอร์ม contact
+app.post('/contact', (req, res) => {
+  // ในที่นี้แค่แสดงผลลัพธ์ ควรเพิ่มการบันทึกข้อมูลจริงใน production
+  console.log('Contact form submitted:', req.body);
+  res.redirect('/contact?success=true');
+});
+
+
 // Health check endpoint
 app.get('/health', (req, res) => {
   res.status(200).json({ status: 'healthy' });

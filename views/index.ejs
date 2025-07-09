@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -22,4 +22,26 @@
     </div>
   </div>
 </body>
-</html>
+</html> -->
+
+
+<%- include('partials/header', { title: 'Welcome' }) %>
+
+  <h1>Welcome to Our Website</h1>
+  <p>This is a simple web application for testing Proen.cloud deployment.</p>
+  
+  <div class="features">
+    <div class="feature-card">
+      <h2>About Us</h2>
+      <p>Learn more about our company and mission.</p>
+      <a href="/about" class="btn">Read More</a>
+    </div>
+    
+    <div class="feature-card">
+      <h2>Contact</h2>
+      <p>Get in touch with our team.</p>
+      <a href="/contact" class="btn">Contact Us</a>
+    </div>
+  </div>
+
+<%- include('partials/footer') %>
