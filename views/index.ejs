@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1><%= title %></h1>
+    
+    <div class="server-card">
+      <h2>Server Information</h2>
+      <p><strong>Name:</strong> <%= serverInfo.name %></p>
+      <p><strong>Status:</strong> <span class="status"><%= serverInfo.status %></span></p>
+      <p><strong>Current Time:</strong> <%= serverInfo.time %></p>
+    </div>
+
+    <div class="links">
+      <a href="/health" class="btn">Health Check</a>
+    </div>
+  </div>
+</body>
+</html>
